@@ -1,0 +1,47 @@
+body{
+    background-color: #212121;
+    color: #fff;
+}
+.center{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#clock{
+    font-size: 40px;
+    background-color: orange;
+    padding: 20px 50px;
+    margin-top: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+#banner{
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid rgb(81, 87, 87);;
+    background-color: rgb(81, 87, 87);
+}
+
+nav a[aria-current= 'page']{
+    color: #000;
+    background-color: #d4d4d4;
+}
+nav a{
+    display: inline-block;
+    min-width: 9rem;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    border: 1px solid rgb(22,22,22);
+    text-align: center;
+    text-decoration: none;
+    background-color: #d4d4d4;
+    color: #000;
+}
+
+
+* {
+    box-sizing: border-box;
+}

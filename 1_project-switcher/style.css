@@ -5,6 +5,31 @@ html{
 span{
     display: block;
 }
+
+
+nav a[aria-current= 'page']{
+  color: #000;
+  background-color: #d4d4d4;
+}
+nav a{
+  display: inline-block;
+  min-width: 9rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  border: 1px solid rgb(22,22,22);
+  text-align: center;
+  text-decoration: none;
+  background-color: #d4d4d4;
+  color: #000;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+
 .canvas{
     margin: 100px auto 100px;
     width: 80%;
