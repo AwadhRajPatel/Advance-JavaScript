@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event| HTML</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <ul id="image">
+        <li><img width="200px" id="first" src="first.jpg" alt="photoshop"></li>
+        <li><img width="200px" id="second" src="second.jpg" alt="photoshop"></li>
+        <li><img width="200px" id="third" src="third.jpg" alt="photoshop"></li>
+        <li><img width="200px" id="fourth" src="fourth.jpg" alt="photoshop"></li>
+        <li><img width="200px" id="five"  src="five.jpg" alt="photoshop"></li>
+        <li><a style="color: aliceblue;" href="https://www.google.com/" id="google">Google</a></li>
+    </ul>
+</body>
+<script>
+
+    /* 2 Approuch onclick
+    document.getElementById('third').onclick = function(){
+        alert("third clicked")
+    }
+    */
+   /** 3rd concept best Approch 
+   document.getElementById('third').addEventListener('click',function(){
+    alert("third clicked again")
+   })*/
+
+   /*** EVENT OBJECTS*/
+   /* read this topice: 1 type, 2 timestamp,3defaultPrevented,4target,toElement,6srcElement ,7currentTarget,
+   *8ClientY, 10clientY, 9screenX,screenY, 
+    * 11 altkey,12ctrlkey,13shiftkey,14keyCode*/
+
+  /* document.getElementById('third').addEventListener('click',function(e){
+    console.log(e);
+   }, false)
+  */
+
+ /* Event <1.Propagation> Bubble ing case
+ document.getElementById('image').addEventListener('click',function(e){
+   console.log("clicked inside the ul") ;
+ },false)
+
+ document.getElementById('third').addEventListener('click',function(e){
+   console.log("third clicked") ;
+ },false)
+*/
+
+/*<2.Captureing >case
+
+document.getElementById('image').addEventListener('click',function(e){
+   console.log("clicked inside the ul") ;
+ },true)
+
+ document.getElementById('third').addEventListener('click',function(e){
+   console.log("third clicked") ;
+ },true)
+ */
+
+/* 3 Stop Bubble case
+document.getElementById('image').addEventListener('click',function(e){
+   console.log("clicked inside the ul") ;
+ },false)
+
+ document.getElementById('third').addEventListener('click',function(e){
+   console.log("third clicked") ;
+   e.stopPropagation()
+ },false)
+*/
+/*
+document.getElementById('google').addEventListener('click',function(e){
+  e.preventDefault();
+  e.stopPropagation();
+  console.log("google clicked");
+}, false)
+*/
+
+
+/* Advance Event javascript*/
+document.querySelector("#image").addEventListener('click',function(e){
+  // console.log(e.target.parentNode);
+  console.log(e.target.tagName);
+  if(e.target.tagName === 'IMG'){
+    console.log(e.target.id);
+    let removeIt = e.target.parentNode
+     removeIt.remove()
+  }
+  // let removeIt = e.target.parentNode
+  // removeIt.remove()
+  // removeIt.parentNode.removeChild(removeIt)
+})
+
+</script>
+</html>
