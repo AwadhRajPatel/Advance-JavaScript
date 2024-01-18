@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async concept</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h1>Async part1 with chai</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    /*First concept Time interval
+   setTimeout(function(){
+    console.log("AwadhRaj")
+   }, 2000) 
+   */
+
+  /* 2 Second concept Time interval*/
+  const sayAwadhraj = function(){
+    console.log("PatelJi")
+  }
+  setTimeout(sayAwadhraj,2000)
+  // h1 change in concept
+  const changeText = function(){
+    document.querySelector('h1').innerHTML = "Best JS Series"
+  }
+  const changeMe =  setTimeout(changeText, 2000)
+  document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(changeMe)
+    console.log("STOPPED")
+  })
+</script>
+</html>
