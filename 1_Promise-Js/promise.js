@@ -103,7 +103,9 @@ async function getAllUsers(){
 getAllUsers()
 */
 
-/* 2nd method create json file direct fetch useing */
+/* 2nd method create json file direct fetch useing
+  ***--Fetch Api concept---****
+*/
 fetch('https://jsonplaceholder.typicode.com/users')
 .then((response) => {
     return response.json()
